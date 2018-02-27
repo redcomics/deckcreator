@@ -17,6 +17,7 @@
 			height: 95vh;
 			overflow: hidden;
 			vertical-align: top;
+			display: flex;
 		}
 		#legend_row{
 			background: #111;
@@ -61,6 +62,7 @@
 			padding: 0.1in;
 			vertical-align: top;
 			width: 570px;
+			flex-grow: 1;
 		}
 		#card_search{
 			border: 0.1in solid #777;
