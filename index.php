@@ -17,6 +17,11 @@
 			height: 95vh;
 			overflow: hidden;
 			vertical-align: top;
+			display: -webkit-flex;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: flex;
 		}
 		#legend_row{
 			background: #111;
@@ -61,6 +66,7 @@
 			padding: 0.1in;
 			vertical-align: top;
 			width: 570px;
+			flex-grow: 1;
 		}
 		#card_search{
 			border: 0.1in solid #777;
@@ -112,7 +118,11 @@
 				height: auto;
 			}
 			#right_content .card_image{
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
 				width: 2.5in;
+				height: 3.5in;
 				padding: 3px !important;
 			}
 		}
@@ -197,7 +207,6 @@
 
 				if(card_id == cards_JSON.length)
 				{
-					console.log(kaganapan_items);
 					card_search_field.addEventListener("keyup", search_card);
 				}
 			}
