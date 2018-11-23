@@ -1,0 +1,132 @@
+@white: #fff;
+@red: #f00;
+@coolgreen: #05E85C;
+@font_family_1: Arial, Arial Black, sans;
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#wrapper {
+	height: 100vh;
+	width: 100%;
+	background: #efefef;
+}
+#wrapper_row {
+	height: 95vh;
+	overflow: hidden;
+	vertical-align: top;
+	display: flex;
+}
+#legend_row {
+	background: #111;
+	box-sizing: border-box;
+	color: @white;
+	font-family: @font_family_1;
+	height: 5vh;
+	padding: 5px 10px;
+	#deck_card_count.insufficient {
+		color: @red;
+	}
+	#deck_card_count.sufficient {
+		color: @coolgreen;
+	}
+}
+#preview_block {
+	background: #333333;
+	float: left;
+	height: 100vh;
+	padding: 0.1in;
+	vertical-align: top;
+	width: 325px;
+}
+#left_content {
+	background: #777777;
+	box-sizing: border-box;
+	display: inline-block;
+	float: left;
+	height: 100%;
+	overflow-y: auto;
+	padding: 55px 0.125in 0.1in;
+	vertical-align: top;
+	width: 450px;
+	.card_image {
+		width: 2in;
+	}
+	.card_image.maxed_out {
+		opacity: 0.35;
+	}
+}
+#right_content {
+	background: #efefef;
+	box-sizing: border-box;
+	display: inline-block;
+	float: left;
+	height: 100%;
+	overflow-y: auto;
+	padding: 0.1in;
+	vertical-align: top;
+	width: 570px;
+	flex-grow: 1;
+	.card_image {
+		width: 1.75in;
+		margin: 0px 0.1in 0px 0px;
+	}
+}
+#card_search {
+	border: 0.1in solid #777;
+	box-sizing: border-box;
+	display: block;
+	font-family: @font_family_1;
+	margin-bottom: 0.1in;
+	margin-top: -55px;
+	outline: none;
+	padding: 10px;
+	position: fixed;
+	width: 410px;
+	z-index: 10000;
+}
+#preview_image {
+	background: #fff;
+	border-radius: 4mm;
+	width: 100%;
+}
+.card_image {
+	cursor: pointer;
+	margin: 0px 0.1in 0.05in 0px;
+}
+.hidden {
+	display: none;
+}
+@media print {
+	#wrapper {
+		background: #fff;
+	}
+	#preview_block {
+		display: none;
+	}
+	#left_content {
+		display: none;
+	}
+	#legend_row {
+		display: none;
+	}
+	#wrapper_row {
+		width: 100%;
+		padding: 0px;
+		background: none;
+		overflow: initial;
+		height: auto;
+	}
+	#right_content {
+		width: 100%;
+		padding: 0px;
+		background: none;
+		overflow: initial;
+		height: auto;
+		.card_image {
+			width: 2.5in;
+			padding: 3px !important;
+		}
+	}
+}
